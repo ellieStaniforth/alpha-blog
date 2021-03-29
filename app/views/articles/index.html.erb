@@ -12,6 +12,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        by <%= article.user.username if article.user %>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td><%= link_to 'Show', article_path(article) %></td>
